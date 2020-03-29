@@ -47,7 +47,7 @@ class PeopleList extends React.Component {
         return (
             <div className="page">
                 <a href="/">
-                    <img className="logo" src="/logo.png" alt="logo" />
+                    <img className="logo" src="logo.png" alt="logo" />
                 </a>
                 <div className="component component-people">
                     { !this.props.isLoading ? (

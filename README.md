@@ -1,3 +1,5 @@
+Preview link: https://klaudiapolszl.github.io/character-list/
+
 Character catalog created with using The Star Wars API (https://swapi.co/).
 
 The task was to display characters list, consisting of name and surname with pagination. Each character links to a subpage with detailed information.
