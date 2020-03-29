@@ -3,9 +3,14 @@ $navy: #1e2152;
 $white: #fff;
 $black: #000;
 
-html{
+.bg{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
   background-image: url("bg.jpg");
-  background-size: cover;
+  background-position: right;
 }
 body{
   font-family: 'Anton', sans-serif;
@@ -22,83 +27,136 @@ body{
   max-width: 40%;
   display: block;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 20px;
   padding: 30px;
   margin-bottom: 40px;
-  min-height: 780px;
-}
-.character-name__link{
-  display: block;
-  margin: 6px 0px;
-  font-size: 25px;
-  color: $black;
-  text-align: center;
-}
-.character-name__btn{
-  background-color: $navy;
-  color: $white;
-  border-radius: 30px;
-  padding: 0px 23px 0px 0px;
-  border: none;
-  font-family: 'Anton', sans-serif;
-  text-transform: uppercase;
-  font-size: 22px;
-  height: 44px;
-}
-.character-name__btn__text{
-  margin-left: 10px;
-}
-.character-name__btn__icon{
-  background: $yellow;
-  padding: 5px 8px;
-  border-radius: 38px;
-  display: inline;
-  border: 1px solid $yellow;
-  color: $navy;
-}
-.character-name__btn:hover{
-  cursor: pointer;
-  background-color: $yellow;
-  transition-duration: 0.3s;
-  color: #1e2152;
-  .character-name__btn__icon{
-    background: $navy;
-    color: $white;
-    transition-duration: 0.3s;
-    border: none;
+  min-width: 440px;
+  .character-name__table{
+    margin: 0 auto;
+    .character-name__link{
+      display: block;
+      margin: 6px 0px;
+      font-size: 25px;
+      color: $black;
+      text-align: center;
+    }
+    .character-name__btn{
+      background-color: $navy;
+      color: $white;
+      border-radius: 30px;
+      padding: 0px 23px 0px 0px;
+      border: none;
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      font-size: 22px;
+      height: 44px;
+      .character-name__btn__text{
+        margin-left: 10px;
+      }
+      .character-name__btn__icon{
+        background: $yellow;
+        padding: 5px 10px;
+        border-radius: 50%;
+        display: inline;
+        border: 1px solid $yellow;
+        color: $navy;
+      }
+      &:hover{
+        cursor: pointer;
+        background-color: $yellow;
+        transition-duration: 0.3s;
+        outline: none;
+        color: #1e2152;
+        .character-name__btn__icon{
+          background: $navy;
+          color: $white;
+          transition-duration: 0.3s;
+          border: none;
+        }
+      }
+      &:active{
+        outline: none;
+      }
+    }
   }
-}
-.character-name__table{
-  margin: 0 auto;
-}
-.pagination__arrows{
-  font-size: 49px;
-  color: $navy;
-}
-.is-unactive{
-  display: none;
-}
-.details__arrow{
-  font-size: 30px;
-}
-.pageloader{
-  color: $navy;
-  margin-top: 40px;
-  text-align: center;
-}
-.pageloader__text{
-  margin-left: 10px;
-  font-size: 40px;
-}
-.pageloader__icon{
-  font-size: 60px;
-  color: $yellow;
-}
-.pagination__arrows--prev:hover{
-  margin-left: -6px;
-  transition-duration: 0.4s;
-}
-.pagination__arrows--next:hover{
-  margin-right: -6px;
-  transition-duration: 0.4s;
+  .pagination{
+    .pagination__arrows {
+      font-size: 49px;
+      color: $navy;
+      margin-top: 20px;
+    }
+    .pagination__arrows--prev:hover{
+      margin-left: -6px;
+      transition-duration: 0.4s;
+    }
+    .pagination__arrows--next:hover{
+      margin-right: -6px;
+      transition-duration: 0.4s;
+    }
+  }
+  .pageloader{
+    color: $navy;
+    text-align: center;
+    .pageloader__text{
+      margin-left: 10px;
+      font-size: 40px;
+    }
+    .pageloader__icon{
+      font-size: 60px;
+      color: $yellow;
+    }
+  }
+  .is-unactive{
+    display: none;
+  }
+  .details__name{
+    text-align: center;
+    font-size: 39px;
+    color: #000;
+    margin-top: 17px;
+  }
+  .details__table {
+    margin: 0 auto;
+    font-size: 23px;
+    margin-top: 20px;
+    color: black;
+  }
+  .details-back__btn{
+    background-color: $navy;
+    color: $white;
+    border-radius: 30px;
+    padding: 0px 23px 0px 0px;
+    border: none;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    font-size: 22px;
+    height: 44px;
+    .details-back__btn__text{
+      margin-left: 10px;
+    }
+    .details-back__btn__icon{
+      background: $yellow;
+      padding: 5px 10px;
+      border-radius: 50%;
+      display: inline;
+      border: 1px solid $yellow;
+      color: $navy;
+    }
+    &:hover{
+      cursor: pointer;
+      background-color: $yellow;
+      transition-duration: 0.3s;
+      outline: none;
+      color: #1e2152;
+      .details-back__btn__icon{
+        background: $navy;
+        color: $white;
+        transition-duration: 0.3s;
+        border: none;
+      }
+    }
+    &:active{
+      outline: none;
+    }
+  }
 }

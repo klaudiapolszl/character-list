@@ -9,6 +9,7 @@ class Index extends React.Component {
     render() {
         return(
             <Provider store={ store } >
+                <div className="bg"></div>
                 <App />
             </Provider>
         );

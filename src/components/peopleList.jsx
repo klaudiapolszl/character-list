@@ -17,12 +17,12 @@ class PeopleList extends React.Component {
         const id = people.url.replace("https://swapi.co/api/people/", "");
         return (
             <tr>
-                <td>
+                <td className="table__cell table__cell__name">
                     <a href={`person/${id}`} className="character-name__link">
                         <p>{name}</p>
                     </a>
                 </td>
-                <td>
+                <td className="table__cell table__cell__btn">
                     <a href={`person/${id}`}>
                         <button className="character-name__btn">
                             <div className="character-name__btn__icon">
@@ -53,7 +53,7 @@ class PeopleList extends React.Component {
         return (
             <div className="page">
                 <a href='/'><img className="logo" src="logo.png" /></a>
-                <div className="component">
+                <div className="component component-people">
                     { !this.props.isLoading ? (
                         <div>
                             <table className="table character-name__table">
