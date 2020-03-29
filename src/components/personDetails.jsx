@@ -3,15 +3,10 @@ import { connect } from "react-redux";
 import { getPerson } from "../services/peopleServices";
 
 export class PersonDetails extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         const id = this.props.match.params.id;
         this.props.getPerson(id);
     }
-
 
     getDetails = () => {
         return (
@@ -51,7 +46,9 @@ export class PersonDetails extends React.Component {
     render() {
         return (
             <div className="page">
-                <a href='/'><img className="logo" src="/logo.png" /></a>
+                <a href="/">
+                    <img className="logo" src="/logo.png" alt="logo" />
+                </a>
                 <div className="component component-details">
                     { !this.props.isLoading ? (
                             <div>
@@ -69,7 +66,7 @@ export class PersonDetails extends React.Component {
                                 {this.getDetails()}
                             </div>
                         )
-                        : (<div className={(this.props.isLoading ? '' : 'is-unactive')}>
+                        : (<div className={(this.props.isLoading ? "" : "is-unactive")}>
                             <div className="pageloader">
                                 <i className="fas fa-jedi fa-pulse pageloader__icon"></i>
                                 <span className="pageloader__text">Loading...</span>

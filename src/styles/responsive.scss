@@ -1,7 +1,7 @@
 @media (max-width: 480px) {
   .component{
     min-width: 90%;
-    margin: 0px auto 40px auto;
+    margin: 0 auto 40px auto;
   }
   .component .character-name__table .table__cell{
     display: block;
@@ -11,6 +11,6 @@
     border: none;
   }
   .component .character-name__table .character-name__link {
-    margin: 0px 0px;
+    margin: 0 0;
   }
 }

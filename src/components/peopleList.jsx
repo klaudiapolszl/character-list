@@ -2,12 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import getPeople, { getPeopleFromPage } from "../services/peopleServices.js";
 
-
 class PeopleList extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         this.props.getPeople();
     }
@@ -49,10 +44,11 @@ class PeopleList extends React.Component {
     };
 
     render() {
-
         return (
             <div className="page">
-                <a href='/'><img className="logo" src="logo.png" /></a>
+                <a href="/">
+                    <img className="logo" src="/logo.png" alt="logo" />
+                </a>
                 <div className="component component-people">
                     { !this.props.isLoading ? (
                         <div>
@@ -62,12 +58,16 @@ class PeopleList extends React.Component {
                                 </tbody>
                             </table>
                             <nav className="pagination is-centered" role="navigation" aria-label="pagination">
-                                <a onClick={this.prevPage}><i className="fas fa-chevron-circle-left pagination__arrows pagination__arrows--prev" ></i></a>
-                                <a onClick={this.nextPage}><i className="fas fa-chevron-circle-right pagination__arrows pagination__arrows--next"></i></a>
+                                <a onClick={this.prevPage}>
+                                    <i className="fas fa-chevron-circle-left pagination__arrows pagination__arrows--prev" ></i>
+                                </a>
+                                <a onClick={this.nextPage}>
+                                    <i className="fas fa-chevron-circle-right pagination__arrows pagination__arrows--next"></i>
+                                </a>
                             </nav>
                         </div>
                     )
-                    : (<div className={(this.props.isLoading ? '' : 'is-unactive')}>
+                    : (<div className={(this.props.isLoading ? "" : "is-unactive")}>
                             <div className="pageloader">
                                 <i className="fas fa-jedi fa-pulse pageloader__icon"></i>
                                 <span className="pageloader__text">Loading...</span>

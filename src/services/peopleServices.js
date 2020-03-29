@@ -7,16 +7,15 @@ export default function getPeople() {
     return function(dispatch) {
         dispatch({ type: "SET_LOADING", isLoading: true });
         return fetch(endpoints.people,{
-            method: 'GET',
+            method: "GET",
             headers: new Headers({
-                'Content-Type': 'application/json; charset=utf-8',
-                'X-Requested-With': 'XMLHttpRequest'
+                "Content-Type": "application/json",
             })
         })
             .then( r => r.json() )
             .then( json => {
-                    dispatch({ type: "SET_PEOPLE", people: json.results });
-                    dispatch({ type: "SET_LOADING", isLoading: false });
+                dispatch({ type: "SET_PEOPLE", people: json.results });
+                dispatch({ type: "SET_LOADING", isLoading: false });
                 dispatch({ type: "SET_NEXT_PAGE", next: json.next });
                 dispatch({ type: "SET_PREVIOUS_PAGE", prev: json.previous });
                 }
@@ -27,13 +26,12 @@ export function getPeopleFromPage(url) {
     return function(dispatch) {
         dispatch({ type: "SET_LOADING", isLoading: true });
         return fetch(url, {
-            method: 'GET',
+            method: "GET",
             headers: new Headers({
-                'Content-Type': 'application/json; charset=utf-8',
-                'X-Requested-With': 'XMLHttpRequest'
+                "Content-Type": "application/json"
             })
         })
-            .then((response) => response.json())
+            .then((r) => r.json())
             .then(json => {
                 dispatch({ type: "SET_PEOPLE", people: json.results });
                 dispatch({ type: "SET_LOADING", isLoading: false });
@@ -46,9 +44,9 @@ export function getPerson(id) {
     return function(dispatch) {
         dispatch({ type: "SET_LOADING", isLoading: true });
         return fetch(endpoints.people + "" + id + "/?format=json", {
-            method: 'GET',
+            method: "GET",
             headers: new Headers({
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             })
         })
             .then((r) => r.json())
