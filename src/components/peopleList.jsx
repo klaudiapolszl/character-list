@@ -11,7 +11,7 @@ class PeopleList extends React.Component {
         const name = people.name;
         const id = people.url.replace("https://swapi.co/api/people/", "");
         return (
-            <tr>
+            <tr key={ id }>
                 <td className="table__cell table__cell__name">
                     <a href={`person/${id}`} className="character-name__link">
                         <p>{name}</p>
