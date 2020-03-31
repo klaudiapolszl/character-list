@@ -9,7 +9,8 @@ export default function getPeople() {
         return fetch(endpoints.people,{
             method: "GET",
             headers: new Headers({
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json; charset=utf-8',
+                'X-Requested-With': 'XMLHttpRequest'
             })
         })
             .then( r => r.json() )
@@ -28,7 +29,8 @@ export function getPeopleFromPage(url) {
         return fetch(url, {
             method: "GET",
             headers: new Headers({
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json; charset=utf-8',
+                'X-Requested-With': 'XMLHttpRequest'
             })
         })
             .then((r) => r.json())
@@ -46,7 +48,8 @@ export function getPerson(id) {
         return fetch(endpoints.people + "" + id + "/?format=json", {
             method: "GET",
             headers: new Headers({
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json; charset=utf-8',
+                'X-Requested-With': 'XMLHttpRequest'
             })
         })
             .then((r) => r.json())
