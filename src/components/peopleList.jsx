@@ -9,9 +9,8 @@ class PeopleList extends React.Component {
 
     getPerson = people => {
         const name = people.name;
-        console.log("urrrrrl"+people.url);
         const id = people.url.replace("http://swapi.dev/api/people/", "");
-        console.log(id);
+
         return (
             <tr key={ id }>
                 <td className="table__cell table__cell__name">
