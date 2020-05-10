@@ -9,7 +9,9 @@ class PeopleList extends React.Component {
 
     getPerson = people => {
         const name = people.name;
-        const id = people.url.replace("https://swapi.co/api/people/", "");
+        console.log("urrrrrl"+people.url);
+        const id = people.url.replace("http://swapi.dev/api/people/", "");
+        console.log(id);
         return (
             <tr key={ id }>
                 <td className="table__cell table__cell__name">
@@ -33,13 +35,13 @@ class PeopleList extends React.Component {
 
     nextPage = () => {
         if(this.props.next) {
-            this.props.getPeopleFromPage(this.props.next);
+            this.props.getPeopleFromPage(this.props.next.replace("http", "https"));
         }
     };
 
     prevPage = () => {
         if(this.props.prev) {
-            this.props.getPeopleFromPage(this.props.prev);
+            this.props.getPeopleFromPage(this.props.prev.replace("http", "https"));
         }
     };
 
